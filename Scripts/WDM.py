@@ -45,10 +45,16 @@ Project_Configsheet  = Project_DataFile_WB.sheet_by_name('Model_config')
 Model_name= Project_Configsheet.cell_value(0,1)
 scriptConfig={}
 
-for m in range (3,13):
-    scriptConfig [Project_Configsheet.cell_value(m,0)]= Project_Configsheet.cell_value(m,1)
+for m in range (3,14):
+    scriptConfig [Project_Configsheet.cell_value(m,0)]= [(Project_Configsheet.cell_value(m,1))]
 
+par_Years = int (scriptConfig["EndYear"][0]- scriptConfig["StartYear"][0]) +1
+par_Region = len((scriptConfig["Region"]))       
+Per_Sector= len((scriptConfig["Sector"])) 
+Per_Service= len((scriptConfig["Service"])) 
+Per_Product= len((scriptConfig["Product"])) 
+Per_Material=  len((scriptConfig["Material"])) 
+Per_WasteMgt= len((scriptConfig["Recovery"])) 
+Per_REStg= len((scriptConfig["RE_Strategy"])) 
 
-       
-       
     
